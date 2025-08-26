@@ -12,23 +12,40 @@ const CompareIcon = () => (
   </svg>
 );
 
-// --- EXPANDED MOCK DATA ---
+// --- CATEGORY ICONS ---
+const TechIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+);
+const UniversityIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+);
+const PrivateIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+);
+
+const categoryIcons = {
+    Tech: <TechIcon />,
+    University: <UniversityIcon />,
+    Private: <PrivateIcon />,
+};
+const categoryColors = {
+    Tech: 'border-cyan-400',
+    University: 'border-amber-400',
+    Private: 'border-violet-400',
+}
+
+// --- EXPANDED MOCK DATA with CATEGORIES ---
 const initialCollegesData = [
-    { id: 1, name: 'Graphic Era Hill University', location: 'Dehradun', state: 'Uttarakhand', rating: 4.5, fees: 150000, courses: ['B.Tech CSE', 'B.Tech ME', 'BBA'], image: 'https://images.shiksha.com/mediadata/images/1645181225phpGf0t2Z.jpeg', description: 'A leading institution in Uttarakhand known for its strong engineering and management programs.', reviews: [{author: 'Alumni', text: 'Great faculty and placement support.'}, {author: 'Student', text: 'The campus life is vibrant and engaging.'}] },
-    { id: 2, name: 'IIT Bombay', location: 'Mumbai', state: 'Maharashtra', rating: 4.9, fees: 220000, courses: ['B.Tech CSE', 'Aerospace Engg.', 'Chemical Engg.'], image: 'https://images.static-collegedunia.com/public/college_data/images/campusimage/14387796001.jpg', description: 'One of the premier engineering institutes in India, renowned for its research and innovation.', reviews: [{author: 'Professor', text: 'Cutting-edge research facilities.'}, {author: 'Student', text: 'A challenging but rewarding curriculum.'}] },
-    { id: 3, name: 'Delhi Technological University', location: 'Delhi', state: 'Delhi', rating: 4.7, fees: 210000, courses: ['B.Tech ECE', 'Software Engg.', 'Mathematics'], image: 'https://images.static-collegedunia.com/public/college_data/images/campusimage/1588849313dtu2.jpg', description: 'A top-ranked university in the heart of India, with a rich history of academic excellence.', reviews: [{author: 'Alumni', text: 'Strong industry connections.'}] },
-    { id: 4, name: 'VIT Vellore', location: 'Vellore', state: 'Tamil Nadu', rating: 4.6, fees: 198000, courses: ['B.Tech IT', 'Biotechnology', 'Mechanical Engg.'], image: 'https://vit.ac.in/sites/default/files/VIT-Vellore-Campus-5.jpg', description: 'Famous for its flexible credit system and diverse student population from across the globe.', reviews: [{author: 'Student', text: 'So many clubs and technical chapters to join!'}] },
-    { id: 5, name: 'NIT Trichy', location: 'Tiruchirappalli', state: 'Tamil Nadu', rating: 4.8, fees: 180000, courses: ['B.Tech Civil', 'Metallurgy', 'Architecture'], image: 'https://www.nitt.edu/home/banner/nitt-admin-building.jpg', description: 'A leading National Institute of Technology with a sprawling campus and excellent infrastructure.', reviews: [{author: 'Alumni', text: 'Placements are top-notch, especially for core branches.'}] },
-    { id: 6, name: 'BITS Pilani', location: 'Pilani', state: 'Rajasthan', rating: 4.8, fees: 420000, courses: ['B.E. CSE', 'M.Sc. Economics', 'Pharmacy'], image: 'https://www.bits-pilani.ac.in/uploads/Pilani%20Campus/BITS-Pilani-Pilani-Campus-1.jpg', description: 'A private university known for its no-attendance policy and rigorous entrance examination, BITSAT.', reviews: [{author: 'Student', text: 'The academic freedom is unparalleled.'}] },
-    { id: 7, name: 'IIT Madras', location: 'Chennai', state: 'Tamil Nadu', rating: 4.9, fees: 215000, courses: ['Naval Architecture', 'Engineering Physics'], image: 'https://i.ytimg.com/vi/tM9vOaaGg0E/maxresdefault.jpg', description: 'Known for its lush green campus and strong focus on research and development.', reviews: [{author: 'Researcher', text: 'Incredible labs and research opportunities.'}] },
-    { id: 8, name: 'Jadavpur University', location: 'Kolkata', state: 'West Bengal', rating: 4.6, fees: 10000, courses: ['Information Technology', 'Power Engineering'], image: 'https://images.static-collegedunia.com/public/college_data/images/campusimage/149312173115.JPG', description: 'A top-tier public university offering high-quality education at a very low cost.', reviews: [{author: 'Alumni', text: 'Best ROI in the country.'}] },
-    { id: 9, name: 'Thapar Institute of Engineering', location: 'Patiala', state: 'Punjab', rating: 4.4, fees: 325000, courses: ['Biomedical Engineering', 'Mechatronics'], image: 'https://www.thapar.edu/images/about-us-new.jpg', description: 'A leading private engineering institution with a strong emphasis on practical learning.', reviews: [{author: 'Student', text: 'Great infrastructure and modern labs.'}] },
-    { id: 10, name: 'Manipal Institute of Technology', location: 'Manipal', state: 'Karnataka', rating: 4.5, fees: 335000, courses: ['Computer & Communication', 'Data Science'], image: 'https://manipal.edu/content/dam/manipal/mu/mit/images/gallery/Campus-Life-Gallery/mit_gallery_1.jpg', description: 'A constituent institution of Manipal Academy of Higher Education, known for its international collaborations.', reviews: [{author: 'Student', text: 'Amazing campus life and cultural fests.'}] },
-    { id: 11, name: 'IIT Guwahati', location: 'Guwahati', state: 'Assam', rating: 4.7, fees: 225000, courses: ['Biosciences', 'Design'], image: 'https://www.iitg.ac.in/mech/img/gallery/iitg_admin.jpg', description: 'Situated on the banks of the Brahmaputra river, offering a scenic and serene learning environment.', reviews: [{author: 'Student', text: 'The campus is beautiful.'}] },
-    { id: 12, name: 'Amity University', location: 'Noida', state: 'Uttar Pradesh', rating: 4.2, fees: 350000, courses: ['Forensic Science', 'Nanotechnology'], image: 'https://www.amity.edu/noida/images/noida-campus1.jpg', description: 'A leading private university with a vast campus and a wide array of courses.', reviews: [{author: 'Student', text: 'Lots of opportunities for extracurricular activities.'}] },
-    { id: 13, name: 'SRM Institute of Science', location: 'Chennai', state: 'Tamil Nadu', rating: 4.3, fees: 250000, courses: ['Genetic Engineering', 'Automobile Engineering'], image: 'https://www.srmist.edu.in/wp-content/uploads/2019/12/srmist-1.jpg', description: 'A large, diverse university with a strong focus on research and international exposure.', reviews: [{author: 'Student', text: 'Huge campus with great facilities.'}] },
-    { id: 14, name: 'IIT Roorkee', location: 'Roorkee', state: 'Uttarakhand', rating: 4.8, fees: 220000, courses: ['Pulp and Paper Engg.', 'Geological Technology'], image: 'https://www.iitr.ac.in/assets/images/hero-banner/1.jpg', description: 'One of the oldest technical institutions in Asia, with a rich heritage and a strong alumni network.', reviews: [{author: 'Alumni', text: 'The legacy and brand value are immense.'}] },
-    { id: 15, name: 'College of Engineering, Pune', location: 'Pune', state: 'Maharashtra', rating: 4.6, fees: 85000, courses: ['Instrumentation & Control', 'Production Engg.'], image: 'https://www.coep.org.in/sites/default/files/phto_0.jpg', description: 'An autonomous institute of the Government of Maharashtra, known for its academic excellence.', reviews: [{author: 'Student', text: 'Excellent faculty and a strong coding culture.'}] },
+    { id: 1, name: 'Graphic Era Hill University', location: 'Dehradun', state: 'Uttarakhand', rating: 4.5, fees: 150000, courses: ['B.Tech CSE', 'B.Tech ME', 'BBA'], category: 'University', description: 'A leading institution in Uttarakhand known for its strong engineering and management programs.', reviews: [{author: 'Alumni', text: 'Great faculty and placement support.'}, {author: 'Student', text: 'The campus life is vibrant and engaging.'}] },
+    { id: 2, name: 'IIT Bombay', location: 'Mumbai', state: 'Maharashtra', rating: 4.9, fees: 220000, courses: ['B.Tech CSE', 'Aerospace Engg.', 'Chemical Engg.'], category: 'Tech', description: 'One of the premier engineering institutes in India, renowned for its research and innovation.', reviews: [{author: 'Professor', text: 'Cutting-edge research facilities.'}, {author: 'Student', text: 'A challenging but rewarding curriculum.'}] },
+    { id: 3, name: 'Delhi Technological University', location: 'Delhi', state: 'Delhi', rating: 4.7, fees: 210000, courses: ['B.Tech ECE', 'Software Engg.', 'Mathematics'], category: 'Tech', description: 'A top-ranked university in the heart of India, with a rich history of academic excellence.', reviews: [{author: 'Alumni', text: 'Strong industry connections.'}] },
+    { id: 4, name: 'VIT Vellore', location: 'Vellore', state: 'Tamil Nadu', rating: 4.6, fees: 198000, courses: ['B.Tech IT', 'Biotechnology', 'Mechanical Engg.'], category: 'Private', description: 'Famous for its flexible credit system and diverse student population from across the globe.', reviews: [{author: 'Student', text: 'So many clubs and technical chapters to join!'}] },
+    { id: 5, name: 'NIT Trichy', location: 'Tiruchirappalli', state: 'Tamil Nadu', rating: 4.8, fees: 180000, courses: ['B.Tech Civil', 'Metallurgy', 'Architecture'], category: 'Tech', description: 'A leading National Institute of Technology with a sprawling campus and excellent infrastructure.', reviews: [{author: 'Alumni', text: 'Placements are top-notch, especially for core branches.'}] },
+    { id: 6, name: 'BITS Pilani', location: 'Pilani', state: 'Rajasthan', rating: 4.8, fees: 420000, courses: ['B.E. CSE', 'M.Sc. Economics', 'Pharmacy'], category: 'Private', description: 'A private university known for its no-attendance policy and rigorous entrance examination, BITSAT.', reviews: [{author: 'Student', text: 'The academic freedom is unparalleled.'}] },
+    { id: 7, name: 'IIT Madras', location: 'Chennai', state: 'Tamil Nadu', rating: 4.9, fees: 215000, courses: ['Naval Architecture', 'Engineering Physics'], category: 'Tech', description: 'Known for its lush green campus and strong focus on research and development.', reviews: [{author: 'Researcher', text: 'Incredible labs and research opportunities.'}] },
+    { id: 8, name: 'Jadavpur University', location: 'Kolkata', state: 'West Bengal', rating: 4.6, fees: 10000, courses: ['Information Technology', 'Power Engineering'], category: 'University', description: 'A top-tier public university offering high-quality education at a very low cost.', reviews: [{author: 'Alumni', text: 'Best ROI in the country.'}] },
+    { id: 9, name: 'Thapar Institute of Engineering', location: 'Patiala', state: 'Punjab', rating: 4.4, fees: 325000, courses: ['Biomedical Engineering', 'Mechatronics'], category: 'Private', description: 'A leading private engineering institution with a strong emphasis on practical learning.', reviews: [{author: 'Student', text: 'Great infrastructure and modern labs.'}] },
+    { id: 10, name: 'Manipal Institute of Technology', location: 'Manipal', state: 'Karnataka', rating: 4.5, fees: 335000, courses: ['Computer & Communication', 'Data Science'], category: 'Private', description: 'A constituent institution of Manipal Academy of Higher Education, known for its international collaborations.', reviews: [{author: 'Student', text: 'Amazing campus life and cultural fests.'}] },
 ];
 
 // --- College Details Modal Component ---
@@ -53,7 +70,9 @@ const CollegeModal = ({ college, onClose, onAddReview }) => {
                     </div>
                     <button onClick={onClose} className="text-3xl font-light text-gray-400 hover:text-white">&times;</button>
                 </div>
-                <img src={college.image} alt={college.name} className="w-full h-64 object-cover rounded-lg mb-6 shadow-md" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/374151/FFFFFF?text=Image+Not+Found'; }}/>
+                <div className="w-full h-64 flex items-center justify-center rounded-lg mb-6 shadow-md" style={{ background: 'linear-gradient(135deg, #1f2937, #374151)' }}>
+                    {categoryIcons[college.category] || <UniversityIcon />}
+                </div>
                 <p className="text-gray-300 mb-6 text-lg">{college.description}</p>
                 <h3 className="text-2xl font-semibold text-white mb-4 border-b border-gray-700 pb-2">Reviews</h3>
                 <div className="space-y-4 max-h-40 overflow-y-auto mb-6 pr-2">
@@ -76,16 +95,20 @@ const CollegeModal = ({ college, onClose, onAddReview }) => {
 
 // --- Reusable College Card Component ---
 const CollegeCard = ({ college, onBookmark, isBookmarked, onCompare, isCompared, onCardClick }) => (
-  <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
-    <div onClick={() => onCardClick(college)} className="cursor-pointer">
-      <img src={college.image} alt={college.name} className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/374151/FFFFFF?text=Image+Not+Found'; }}/>
-      <div className="p-4">
-        <h3 className="text-xl font-bold text-white mb-1 truncate">{college.name}</h3>
-        <p className="text-gray-400 text-sm mb-3">{college.location}, {college.state}</p>
-        <div className="flex justify-between items-center">
-          <span className="text-yellow-400 font-bold text-md">⭐ {college.rating} / 5.0</span>
-          <span className="text-indigo-400 font-semibold text-md">₹{college.fees.toLocaleString()}/yr</span>
+  <div className={`bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 flex flex-col border border-gray-700 hover:border-4 ${categoryColors[college.category] || 'border-gray-700'}`}>
+    <div onClick={() => onCardClick(college)} className="cursor-pointer p-6">
+      <div className="flex items-center mb-4">
+        <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-gray-700 rounded-full mr-4">
+            {categoryIcons[college.category] || <UniversityIcon />}
         </div>
+        <div>
+            <h3 className="text-xl font-bold text-white truncate">{college.name}</h3>
+            <p className="text-gray-400 text-sm">{college.location}, {college.state}</p>
+        </div>
+      </div>
+      <div className="flex justify-between items-center text-sm">
+          <span className="text-yellow-400 font-bold bg-gray-700/50 px-3 py-1 rounded-full">⭐ {college.rating}</span>
+          <span className="text-indigo-400 font-semibold bg-gray-700/50 px-3 py-1 rounded-full">₹{college.fees.toLocaleString()}/yr</span>
       </div>
     </div>
     <div className="p-4 pt-0 mt-auto flex justify-between items-center gap-2">
