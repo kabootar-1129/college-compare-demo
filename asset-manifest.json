@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/college-compare-demo/static/css/main.e6c13ad2.css",
-    "main.js": "/college-compare-demo/static/js/main.6d3722ec.js",
+    "main.css": "/college-compare-demo/static/css/main.6ac0b939.css",
+    "main.js": "/college-compare-demo/static/js/main.9eb41f3f.js",
     "static/js/453.df7a6ea2.chunk.js": "/college-compare-demo/static/js/453.df7a6ea2.chunk.js",
     "index.html": "/college-compare-demo/index.html",
-    "main.e6c13ad2.css.map": "/college-compare-demo/static/css/main.e6c13ad2.css.map",
-    "main.6d3722ec.js.map": "/college-compare-demo/static/js/main.6d3722ec.js.map",
+    "main.6ac0b939.css.map": "/college-compare-demo/static/css/main.6ac0b939.css.map",
+    "main.9eb41f3f.js.map": "/college-compare-demo/static/js/main.9eb41f3f.js.map",
     "453.df7a6ea2.chunk.js.map": "/college-compare-demo/static/js/453.df7a6ea2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.6d3722ec.js"
+    "static/css/main.6ac0b939.css",
+    "static/js/main.9eb41f3f.js"
   ]
 }
