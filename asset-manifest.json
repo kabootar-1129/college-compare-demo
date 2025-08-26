@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/college-compare-demo/static/css/main.8a3a620f.css",
-    "main.js": "/college-compare-demo/static/js/main.a9ae3ce9.js",
+    "main.css": "/college-compare-demo/static/css/main.1b2b2f3b.css",
+    "main.js": "/college-compare-demo/static/js/main.cff0ff70.js",
     "static/js/453.df7a6ea2.chunk.js": "/college-compare-demo/static/js/453.df7a6ea2.chunk.js",
     "index.html": "/college-compare-demo/index.html",
-    "main.8a3a620f.css.map": "/college-compare-demo/static/css/main.8a3a620f.css.map",
-    "main.a9ae3ce9.js.map": "/college-compare-demo/static/js/main.a9ae3ce9.js.map",
+    "main.1b2b2f3b.css.map": "/college-compare-demo/static/css/main.1b2b2f3b.css.map",
+    "main.cff0ff70.js.map": "/college-compare-demo/static/js/main.cff0ff70.js.map",
     "453.df7a6ea2.chunk.js.map": "/college-compare-demo/static/js/453.df7a6ea2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a3a620f.css",
-    "static/js/main.a9ae3ce9.js"
+    "static/css/main.1b2b2f3b.css",
+    "static/js/main.cff0ff70.js"
   ]
 }
